@@ -270,6 +270,8 @@ $classi = [
 
         <?php foreach($students as $student)  {?>
 
+            <?php if($student["voto_medio"] >= 6 ) { ?>
+
             <span>Nome: <strong><?= $student["nome"] ?></strong> Cognome: <strong><?= $student["cognome"] ?></strong> </span>
 
             <ul>
@@ -281,7 +283,7 @@ $classi = [
                 <li>PicPath: <span> <?= $student["immagine"] ?></span></li>
 
             </ul>
-
+            <? } ?>
         <?php } ?>
         
     <?php } ?>
