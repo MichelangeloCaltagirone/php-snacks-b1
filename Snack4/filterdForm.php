@@ -239,6 +239,8 @@ $classi = [
     ],
 ];
 
+$mediaForm = $_GET["voto_medio"];
+var_dump($mediaForm);
 ?>
 
 
@@ -254,13 +256,48 @@ $classi = [
 </head>
 <body>
     
+    <div class="container">
     <h1 class="text-center text-success">Lista Classi</h1>
 
-    <?php foreach($classi as $className => $value) { ?>
-
-        <h3> <?php $className ?> </h3>
+    <?php foreach($classi as $className => $students) { ?>
 
 
+        <div class="p-3 my-2 border border-primary">
+
+            <h3 class="text-danger"> <?= $className ?> </h3>
+            
+            <h4 class="text-warning">- Students -</h4>
+
+            <?php foreach($students as $student)  {?>
+
+                <!-- Filtro che osserva il valore della chiave voto di ogni studente: deve essere maggiore o uguale a 6 -->
+                <!-- if($student["voto_medio"] >= 6 ) -->
+                 <!-- Filtro sempre il voto ma per il valore indicato dall'Utente nel form -->
+                <?php if($student["voto_medio"] < $mediaForm) { ?>
+
+                <div class="p-1 my-1 border border-success">
+                    <span>Nome: <strong><?= $student["nome"] ?></strong> Cognome: <strong><?= $student["cognome"] ?></strong> </span>
+
+                    <ul>
+
+                        <li>Id: <span class="text-secondary"> <?= $student["id"] ?></span></li>
+                        <li>Anni: <span class="text-secondary"> <?= $student["anni"] ?></span></li>
+                        <li>Voto Medio: <span class="text-secondary"> <?= $student["voto_medio"] ?></span></li>
+                        <li>Linguaggio Preferito: <span class="text-secondary"> <?= $student["linguaggio_preferito"] ?></span></li>
+                        <li>PicPath: <span class="text-secondary"> <?= $student["immagine"] ?></span></li>
+
+                    </ul>
+                </div>  
+                
+                <?php } ?>
+            <?php } ?>
+
+        </div>
+        
+        
     <?php } ?>
+
+    </div>
+    
 </body>
 </html>

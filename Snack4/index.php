@@ -255,8 +255,13 @@ $classi = [
 <body>
     <div class="container">
 
-    <form action="filterdForm.php" method="GET">
+    <form class="form-control mt-4" action="filterdForm.php" method="GET">
 
+        <label class="label-control" for="voto_medio">Inserisci il voto medio, verranno filtrati gli studenti con media inferiore</label>
+        <input class="my-1 d-block" type="number" name="voto_medio" id="voto_medio" min="1" max="10">
+
+        <button class="btn btn-primary btn-lg" type="submit">Filtra</button>
+        <button class="btn btn-warning btn-lg" type="reset">Reset</button>
 
     </form>
 
