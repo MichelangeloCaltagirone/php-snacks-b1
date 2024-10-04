@@ -264,27 +264,36 @@ $classi = [
 
     <?php foreach($classi as $className => $students) { ?>
 
-        <h3> <?= $className ?> </h3>
+        <div class="p-3 my-2 border border-primary">
+
+            <h3 class="text-danger"> <?= $className ?> </h3>
+            
+            <h4 class="text-warning">- Students -</h4>
+
+            <?php foreach($students as $student)  {?>
+
+                <?php if($student["voto_medio"] >= 6 ) { ?>
+
+                    <div class="p-1 my-1 border border-success">
+                        <span>Nome: <strong><?= $student["nome"] ?></strong> Cognome: <strong><?= $student["cognome"] ?></strong> </span>
+
+                        <ul>
+
+                            <li>Id: <span class="text-secondary"> <?= $student["id"] ?></span></li>
+                            <li>Anni: <span class="text-secondary"> <?= $student["anni"] ?></span></li>
+                            <li>Voto Medio: <span class="text-secondary"> <?= $student["voto_medio"] ?></span></li>
+                            <li>Linguaggio Preferito: <span class="text-secondary"> <?= $student["linguaggio_preferito"] ?></span></li>
+                            <li>PicPath: <span class="text-secondary"> <?= $student["immagine"] ?></span></li>
+
+                        </ul>
+                    </div>
+
+                <? } ?>
+
+            <?php } ?>
+
+        </div>
         
-        <h4>- Students -</h4>
-
-        <?php foreach($students as $student)  {?>
-
-            <?php if($student["voto_medio"] >= 6 ) { ?>
-
-            <span>Nome: <strong><?= $student["nome"] ?></strong> Cognome: <strong><?= $student["cognome"] ?></strong> </span>
-
-            <ul>
-
-                <li>Id: <span> <?= $student["id"] ?></span></li>
-                <li>Anni: <span> <?= $student["anni"] ?></span></li>
-                <li>Voto Medio: <span> <?= $student["voto_medio"] ?></span></li>
-                <li>Linguaggio Preferito: <span> <?= $student["linguaggio_preferito"] ?></span></li>
-                <li>PicPath: <span> <?= $student["immagine"] ?></span></li>
-
-            </ul>
-            <? } ?>
-        <?php } ?>
         
     <?php } ?>
         
