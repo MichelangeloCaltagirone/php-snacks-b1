@@ -1,3 +1,19 @@
+<?php 
+function isPalindrome($userWord) {
+    $palindrome = false;
+    if ($userWord == strrev($userWord)) {
+        $palindrome = true;
+    };
+
+    return $palindrome;
+}
+
+$userWord = $GET_['userWord'];
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,13 +30,18 @@
 
 <h1 class="mt-5 text-primary">Scopriamo se è palindroma!</h1>
     
-    <form action="" method="GET">
+    <form class="form-control" action="" method="GET">
 
-    
+    <label class="label-form" for="userWord">Inserisci la parola da controllare</label>
+    <input class="form-control " type="text" name="userWord">
+
+    <button class="btn my-1 btn-primary btn-lg" type="submit">Controlla</button>
+    <button class="btn my-1 btn-warning btn-lg" type="reset">Reset</button>
 
     </form>
 
-
+    if(isPalindrome($userWord))
+    
 
 
 </div>
