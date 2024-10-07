@@ -239,8 +239,20 @@ $classi = [
     ],
 ];
 
-$mediaForm = $_GET["voto_medio"];
+$mediaForm = 10;
 var_dump($mediaForm);
+
+if(!isset($_GET["voto_medio"])) {
+    $mediaForm = $_GET["voto_medio"];
+    var_dump($mediaForm);
+} else {
+    var_dump("ciao sono l'else, quindi settato");
+};
+
+var_dump($mediaForm, "ciao");
+
+$favouriteLanguage = $_GET["favouriteLanguage"];
+var_dump($favouriteLanguage);
 ?>
 
 

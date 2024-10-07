@@ -260,6 +260,18 @@ $classi = [
         <label class="label-control" for="voto_medio">Inserisci il voto medio, verranno filtrati gli studenti con media inferiore</label>
         <input class="my-1 d-block" type="number" name="voto_medio" id="voto_medio" min="1" max="10">
 
+        <label class="label-control" for="favouriteLanguage"></label>
+        <select class="" name="favouriteLanguage" id="favouriteLanguage">
+
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+            <option value="PHP">PHP</option>
+            
+        </select>
+
+
+
         <button class="btn btn-primary btn-lg" type="submit">Filtra</button>
         <button class="btn btn-warning btn-lg" type="reset">Reset</button>
 
